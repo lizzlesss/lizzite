@@ -2,23 +2,21 @@
 
 set -ouex pipefail
 
-### Install packages
+dnf -y install libva-nvidia-driver 
+dnf -y remove \
+    scx-scheds \
+    scx-tools
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
+dnf -y copr enable bieszczaders/kernel-cachyos-addons
+dnf -y copr enable myriad-sun/zen-browser
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+dnf -y install \
+    scx-scheds-git \
+    scx-tools-git \
+    kerver \
+    zen-browser
+    
 
-#### Example for enabling a System Unit File
-
-systemctl enable podman.socket
+dnf -y copr disable bieszczaders/kernel-cachyos-addons
+dnf -y copr disable myriad-sun/zen-browser
