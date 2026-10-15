@@ -5,9 +5,7 @@ set -ouex pipefail
 dnf -y remove \
     bazaar \
     intel-lpmd \
-    lutris \
-    scx-scheds \
-    scx-tools
+    lutris
 
 #dnf -y copr enable bieszczaders/kernel-cachyos-addons
 
