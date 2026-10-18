@@ -4,6 +4,11 @@ set -ouex pipefail
 
 dnf -y remove \
     bazaar \
+    fw-ectool \
+    fw-fanctrl \
+    framework-system \
+    greenboot \
+    greenboot-default-health-checks \
     intel-lpmd \
     lutris \
     scx-scheds \
