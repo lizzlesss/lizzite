@@ -19,6 +19,6 @@ dnf -y copr enable sirlucjan/scx-scheds-cargo
 dnf install -y \
     --enablerepo="copr:copr.fedorainfracloud.org:sirlucjan:scx-scheds-cargo" \
     --allowerasing \
-    scx-scheds-git scx-tools-git scx-manager
+    scx-scheds-dev-git
     
 dnf -y copr disable sirlucjan/scx-scheds-cargo
